@@ -1,21 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title slot="end">
+    <ion-title slot="start">
       Tab not Two
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<a href="https://www.google.gr/">
+<a href="">
 <ion-button > Go to google </ion-button>
 </a>
-<div> {{value + 10}} </div>
-<ion-list>{{ value }} </ion-list>
 
-<ion-list *ngFor="let item of dataSourse">
-</ion-list>
 <ion-list-header>
 {{dataSourse.length}}
 </ion-list-header>
 
-<ion-content></ion-content>
+
+<form [formGroup]="loginForm" class="formgroup" (ngSubmit)="onLogin()">
+  <ion-item>
+    <ion-input type="text" formControlName="email" placeholder="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" formControlName="password" placeholder="password"></ion-input>
+  </ion-item>
+  <ion-button  type="submit">Submit</ion-button>
+</form>
+
+
+
+
+  <ion-content></ion-content>
+
+
+
+
+
+

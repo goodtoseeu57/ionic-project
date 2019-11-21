@@ -11,6 +11,8 @@ import {ReactiveFormsModule, FormBuilder, FormControl, FormGroup, Validators , N
 })
 export class Tab2Page implements OnInit {
   dataSourse = new Array<Employee>();
+  progLang = ['Python' , 'PHP' , 'Java'  , 'Rust'];
+  myDate = new Date().getFullYear();
 
   loginForm = new FormGroup({
     email: new FormControl('' , Validators.compose([])),
@@ -28,9 +30,6 @@ export class Tab2Page implements OnInit {
 
   ngOnInit(): void {
     this.getRestApi();
-
-
-
   }
 
   formFuntion() {
@@ -38,6 +37,7 @@ export class Tab2Page implements OnInit {
   }
 
   onLogin() {
+      console.log(this.loginForm.value);
 
       console.log('everything is alright');
 
